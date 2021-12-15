@@ -9,19 +9,16 @@ public class BinarySearchImpl {
 
 
     @Autowired
-    private SortAlgorithm sortAlgorithm;
+    private SortAlgorithm bubbleSortAlgorithm;
 
-    public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-        super();
-        this.sortAlgorithm = sortAlgorithm;
-    }
 
     public int binarySearch(int[] numbers, int numbersToSearchFor){
 
-        System.out.println(this.sortAlgorithm);
-        int[] sortedNumbers= sortAlgorithm.sort(numbers);
+        System.out.println("SortAlgorithmType:"+this.bubbleSortAlgorithm);
+        int[] sortedNumbers= bubbleSortAlgorithm.sort(numbers);
 
         return 3;
     }
 
 }
+
