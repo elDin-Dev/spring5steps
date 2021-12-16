@@ -1,4 +1,4 @@
-package com.sandin.learning.spring.basics.spring5steps;
+package com.sandin.learning.spring.basics.spring5steps.basic;
 
 public interface SortAlgorithm {
 
