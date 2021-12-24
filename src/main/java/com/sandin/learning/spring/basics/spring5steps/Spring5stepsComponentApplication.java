@@ -1,15 +1,14 @@
 package com.sandin.learning.spring.basics.spring5steps;
 
 import com.sandin.learning.spring.basics.Component.ComponentDAO;
-import com.sandin.learning.spring.basics.spring5steps.scope.PersonDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
 @ComponentScan("com.sandin.learning.spring.basics.Component")
 public class Spring5stepsComponentApplication {
 
@@ -17,7 +16,8 @@ public class Spring5stepsComponentApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = SpringApplication.run(Spring5stepsComponentApplication.class, args);
+		ApplicationContext applicationContext =
+			new AnnotationConfigApplicationContext(Spring5stepsComponentApplication.class);
 
 		ComponentDAO componentDAO = applicationContext.getBean(ComponentDAO.class);
 		LOGGER.info("------------------------>{}",componentDAO);
