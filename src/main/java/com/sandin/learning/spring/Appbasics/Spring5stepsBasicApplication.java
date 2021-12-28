@@ -12,7 +12,7 @@ public class Spring5stepsBasicApplication {
 	public static void main(String[] args) {
 
 
-		ApplicationContext applicationContext =
+		AnnotationConfigApplicationContext applicationContext =
 				new AnnotationConfigApplicationContext(Spring5stepsBasicApplication.class);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
@@ -24,6 +24,8 @@ public class Spring5stepsBasicApplication {
 		int result= binarySearch.binarySearch(new int[] {12, 4, 6}, 3);
 
 		System.out.println(result);
+
+		applicationContext.close();
 
 	}
 
