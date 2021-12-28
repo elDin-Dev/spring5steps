@@ -12,8 +12,10 @@ public class Spring5stepsBasicApplication {
 	public static void main(String[] args) {
 
 
-		AnnotationConfigApplicationContext applicationContext =
-				new AnnotationConfigApplicationContext(Spring5stepsBasicApplication.class);
+		try (AnnotationConfigApplicationContext applicationContext =
+				new AnnotationConfigApplicationContext(Spring5stepsBasicApplication.class)){
+
+
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
@@ -25,8 +27,7 @@ public class Spring5stepsBasicApplication {
 
 		System.out.println(result);
 
-		applicationContext.close();
-
+		}
 	}
 
 }
