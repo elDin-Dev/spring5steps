@@ -5,9 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan("com.sandin.learning.spring.basics.spring5steps.scope")
 public class Spring5stepsScopeApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(Spring5stepsScopeApplication.class);
